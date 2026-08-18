@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { AppService } from './app.service';
+import { AsyncPipe } from '@angular/common';
+import { NotesComponent } from "./notes/notes.component";
+import { MatSlideToggle } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [
+    AsyncPipe,
+    NotesComponent,
+  ],
 })
 export class App {
-  protected readonly title = signal('frontend');
+  protected readonly appService = inject(AppService);
+
+  protected readonly title$ = this.appService.getTitle;
 }

@@ -1,0 +1,41 @@
+.delete-button {
+  background: #d32f2f;
+  color: #fff;
+}
+
+.edit-button {
+  background: #2f2fd3;
+  color: #fff;
+}
+
+.notes-card {
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  box-shadow: 4px 5px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+.notes-card__content {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.notes-card__title {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.notes-card__content {
+  font: 13px;
+}
+
+.notes-card__actions {
+  display: flex;
+  gap: 10px;
+}

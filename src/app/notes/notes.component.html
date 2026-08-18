@@ -1,0 +1,29 @@
+<form class="notes-form" [formRoot]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input type="text" matInput [formField]="form.title">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Context</mat-label>
+    <input type="text" matInput [formField]="form.context">
+  </mat-form-field>
+  @if (!updateMode()) {
+    <button matButton="filled" type="submit">Submit</button>
+  } @else {
+    <div class="notes-form__actions">
+      <button matButton="filled" type="submit">Update</button>
+      <button matButton="outlined" type="reset" (click)="onUpdateReset()">Cancel</button>
+    </div>
+  }
+</form>
+
+<div class="notes__list">
+@for (note of notesS(); track note.id) {
+    <app-note-card
+      class="notes__card"
+      [note]="note"
+      (update)="handleUpdate($event)"
+      (delete)="handleDelete($event)"
+    ></app-note-card>
+  }
+</div>

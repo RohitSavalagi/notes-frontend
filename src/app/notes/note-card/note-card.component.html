@@ -1,0 +1,16 @@
+
+<div class="notes-card">
+
+  <div class="notes-card__content">
+    <div class="notes-card__title">{{ note().title }}</div>
+    <div class="notes-card__context">{{ note().context }}</div>
+  </div>
+  <div class="notes-card__actions">
+    <button matIconButton class="edit-button" type="button" (click)="onEdit(note())">
+      <mat-icon class="material-icons">edit</mat-icon>
+    </button>
+    <button matIconButton class="delete-button" type="button" (click)="onDelete(note().id)">
+      <mat-icon class="material-icons">delete</mat-icon>
+    </button>
+  </div>
+</div>
